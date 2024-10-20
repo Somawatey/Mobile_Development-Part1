@@ -32,13 +32,32 @@ class Chimney {
   }
 }
 
+class Floor {
+  int totalFloor;
+  Floor(this.totalFloor);
+  void display() {
+    print("Total Floor of this house is $totalFloor");
+  }
+}
+
+class Address {
+  String location;
+  String country;
+  Address(this.location, this.country);
+  void display() {
+    print("Location =$location, Country=$country");
+  }
+}
+
 class House {
   List<Window> w;
   Roof r;
   Door d;
   Chimney c;
+  Floor f;
+  Address a;
 
-  House(this.w, this.r, this.d, this.c);
+  House(this.w, this.r, this.d, this.c, this.f, this.a);
 
   void display() {
     print("Build your house:");
@@ -48,17 +67,21 @@ class House {
     r.display();
     d.display();
     c.display();
+    f.display();
+    a.display();
   }
 }
 
 void main() {
-  Window w1 = Window("red", "Left", "1st floor");
-  Window w2 = Window("green", "Left", "2nd flooe");
+  Floor f = Floor(2);
+  Window w1 = Window("blue", "Left", "1st floor");
+  Window w2 = Window("green", "Left", "2nd floor");
   Roof r = Roof("Triangle");
   Door d = Door("Center");
   Chimney c = Chimney("Top");
+  Address a = Address("PP", "Cambodia");
 
   List<Window> w = [w1, w2];
-  House house = House(w, r, d, c);
+  House house = House(w, r, d, c, f, a);
   house.display();
 }
