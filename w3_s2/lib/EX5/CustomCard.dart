@@ -1,25 +1,5 @@
-import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: Container(
-      color: Colors.grey,
-      padding: const EdgeInsets.all(40),   
-    child: Center(
-      child: Column(
-            children: [
-              CustomCard(text: "OOP", color: Colors.blue[100]),
-              CustomCard(text: "DART", color: Colors.blue[300]),
-              CustomCard(text: "FLUTTER", gradientColors: [Colors.blue[100]!, Colors.blue[900]!],) 
-            ],
-          ),
-        ),
- 
-      )
-        
-      ),
-    );
-}
+import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
   final String text;
@@ -36,7 +16,7 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(200, 50, 200, 50), // left top right bottom
+      padding: const EdgeInsets.fromLTRB(200, 20, 200, 20), // left top right bottom
       margin: const EdgeInsets.symmetric(vertical: 20),
       decoration: BoxDecoration(
         color: color,
