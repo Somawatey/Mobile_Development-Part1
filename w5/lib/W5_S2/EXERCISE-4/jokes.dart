@@ -28,11 +28,10 @@ class _JokeCardState extends State<JokeCard> {
 
   void setFavorite(int index) {
     setState(() {
-      // Set all jokes as not favorite
       for (var joke in jokes) {
         joke.isFavorite = false;
       }
-      // Set the selected joke as favorite
+
       jokes[index].isFavorite = true;
     });
   }
@@ -47,7 +46,7 @@ class _JokeCardState extends State<JokeCard> {
             title: joke.title,
             description: joke.description,
             isFavorite: joke.isFavorite,
-            onFavoriteClick: () => setFavorite(index),
+            onFavoriteClick: () => setFavorite(index),// use to callback the update favorite joke
           );
         }).toList(),
       ),
