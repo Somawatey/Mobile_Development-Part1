@@ -393,28 +393,28 @@ import 'package:flutter/material.dart';
 // CASE 15
 // ___________________________________________________________________
 
-// void main() {
-//   runApp(
-//     MaterialApp(
-//       home: Scaffold(
-//         body: Column(
-//           crossAxisAlignment: CrossAxisAlignment.stretch,
-//           children: [
-//             Container(
-//                 color: Colors.yellow,
-//                 child: const Text(
-//                   "1",
-//                   style: TextStyle(backgroundColor: Colors.red, fontSize: 50),
-//                 )),
-//             Container(
-//                 color: Colors.yellow,
-//                 child: const Text(
-//                   "2",
-//                   style: TextStyle(backgroundColor: Colors.green, fontSize: 50),
-//                 )),
-//           ],
-//         ),
-//       ),
-//     ),
-//   );
-// }
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+                color: Colors.yellow,
+                child: const Text(
+                  "1",
+                  style: TextStyle(backgroundColor: Colors.red, fontSize: 50),
+                )),
+            Container(
+                color: Colors.yellow,
+                child: const Text(
+                  "2",
+                  style: TextStyle(backgroundColor: Colors.green, fontSize: 50),
+                )),
+          ],
+        ),
+      ),
+    ),
+  );
+}
