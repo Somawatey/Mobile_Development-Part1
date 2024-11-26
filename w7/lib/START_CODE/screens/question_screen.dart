@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import '../model/quiz.dart';
+import '../widgets/app_button.dart';
 
 class QuestionScreen extends StatelessWidget {
   final Question question;
-  final ValueChanged<String> onAnswer;
+  final ValueChanged<String> selectedAnswer;
 
   const QuestionScreen({
     super.key,
     required this.question,
-    required this.onAnswer,
+    required this.selectedAnswer,
   });
 
   @override
@@ -18,6 +19,7 @@ class QuestionScreen extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
             question.title,
@@ -29,17 +31,17 @@ class QuestionScreen extends StatelessWidget {
             textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20,),
-            // Answer Buttons
+
+            // display choice Buttons
             ...question.possibleAnswers.map((answer){
               return Padding(
                 padding: EdgeInsets.symmetric(vertical: 5),
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Pass the selected answer
-                    onAnswer(answer); 
+                child: AppButton(
+                  answer, // Pass the answer text as the label
+                  onTap: () {
+                    selectedAnswer(answer); // Call onAnswer with the selected answer
                   },
-                  child: Text(answer),
-                  ),
+                ),
                   );
 
             }).toList(),

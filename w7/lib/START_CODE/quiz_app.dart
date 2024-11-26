@@ -58,7 +58,7 @@ class _QuizAppState extends State<QuizApp> {
       case QuizState.started:
         currentScreen = QuestionScreen(
           question: widget.quiz.questions[_currentQuestionIndex],
-          onAnswer: (String userAnswer) {
+          selectedAnswer: (String userAnswer) {
             // Process the answer
             _answerQuestion(userAnswer);
           },
