@@ -1,0 +1,15 @@
+in my code
+1. What type of data will store the jokes? What type of data will store the favorite joke?
+=> - data of jokes: store as a list object comtain title, description, and isFavourite
+   - data for favorite joke : is tracket by its index in the list int.
+   
+2. Which widget should be in charge of storing the favorite joke?
+=> - mange the list of jokes and tracks the favorite state
+ Which widget should be stateful?
+   -JokeCard 
+3. How will your widget interact?
+=> JokeCard passes:
+- Data (title, description, isFavorite)
+- A callback to FavoriteCard.
+ Do you need to pass a callback function between widgets?
+=> Yes, a callback is needed to handle updates to the favorite joke.
