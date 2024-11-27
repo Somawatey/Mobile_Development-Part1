@@ -4,13 +4,13 @@ import 'package:w7/Start_code_0/models/expense.dart';
 
 class ExpenseItem extends StatefulWidget {
   final String title; // Expense title
-  final double price; // Expense amount
+  final double amount; // Expense amount
   final DateTime date; // Expense date
-  final String category; // Expense category
+  final Category category; // Expense category
 
   ExpenseItem({
     required this.title,
-    required this.price,
+    required this.amount,
     required this.date,
     required this.category,
   });
@@ -20,10 +20,7 @@ class ExpenseItem extends StatefulWidget {
 }
 
 class _ExpenseItemState extends State<ExpenseItem> {
-  @override
-  Widget build(BuildContext context) {
-    // Choose an icon based on the category
-    IconData getCategoryIcon( Category category) {
+  IconData getCategoryIcon( Category category) {
       switch (category) {
         case Category.food:
           return Icons.fastfood;
@@ -35,7 +32,11 @@ class _ExpenseItemState extends State<ExpenseItem> {
           return Icons.work;
       }
     }
+  @override
+  Widget build(BuildContext context) {
 
+    
+    final date =  DateFormat.yMd().format(widget.date);
     return Card(
       margin: EdgeInsets.all(8),
       child: Padding(
@@ -50,7 +51,7 @@ class _ExpenseItemState extends State<ExpenseItem> {
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  '\$${widget.price.toStringAsFixed(2)}',
+                  '\$${widget.amount.toStringAsFixed(2)}',
                   style: TextStyle(color: Colors.grey),
                 ),
               ],
@@ -65,8 +66,7 @@ class _ExpenseItemState extends State<ExpenseItem> {
                 ),
                 SizedBox(width: 8), // Space between icon and date
                 Text(
-                  DateFormat.yMd()
-                      .format(widget.date), // Format date using intl
+                  date, // Format date using intl
                   style: TextStyle(color: Colors.grey),
                 ),
               ],

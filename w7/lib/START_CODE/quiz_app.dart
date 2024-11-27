@@ -52,7 +52,7 @@ class _QuizAppState extends State<QuizApp> {
       case QuizState.notStarted:
         currentScreen = WelcomeScreen(
           onStart: _startQuiz,
-          quizTitle: 'Crazy Quiz',
+          quizTitle: widget.quiz.title,
         );
         break;
       case QuizState.started:
