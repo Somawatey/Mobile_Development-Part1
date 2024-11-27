@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:w6/Start_code_0/screens/Expenses/expenses.dart';
+import 'package:w7/Start_code_0/screens/Expenses/expenses.dart';
+
 void main() {
   runApp(
     const MaterialApp(
